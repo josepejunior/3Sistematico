@@ -136,6 +136,7 @@
             btnCalcularCubo.TabIndex = 0;
             btnCalcularCubo.Text = "Calcular";
             btnCalcularCubo.UseVisualStyleBackColor = true;
+            btnCalcularCubo.Click += btnCalcularCubo_Click;
             // 
             // label5
             // 
@@ -205,6 +206,7 @@
             btnCalcularEsf.TabIndex = 0;
             btnCalcularEsf.Text = "Calcular";
             btnCalcularEsf.UseVisualStyleBackColor = true;
+            btnCalcularEsf.Click += btnCalcularEsf_Click;
             // 
             // label4
             // 
@@ -274,6 +276,7 @@
             btncalcularTetra.TabIndex = 0;
             btncalcularTetra.Text = "Calcular";
             btncalcularTetra.UseVisualStyleBackColor = true;
+            btncalcularTetra.Click += btncalcularTetra_Click;
             // 
             // frmTridimensional
             // 
@@ -284,9 +287,9 @@
             Controls.Add(cmbTipoTridimensional);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(pnlTetraedro);
             Controls.Add(pnlCubo);
             Controls.Add(pnlEsfera);
-            Controls.Add(pnlTetraedro);
             Name = "frmTridimensional";
             Text = "frmTridimensional";
             Load += frmTridimensional_Load;

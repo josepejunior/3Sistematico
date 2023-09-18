@@ -56,5 +56,20 @@ namespace CalculoFiguras
             else
                 MessageBox.Show("Tiene que seleccionar una opción antes de continuar");
         }
+
+        private void btnCalcularCubo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCalcularEsf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncalcularTetra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
