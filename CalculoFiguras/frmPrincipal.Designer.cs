@@ -28,12 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmPrincipal";
+            label1 = new Label();
+            cmbTipofigura = new ComboBox();
+            label2 = new Label();
+            btnAceptar = new Button();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(26, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(304, 21);
+            label1.TabIndex = 0;
+            label1.Text = "CÁLCULO DE FIGURAS GEOMÉTRICAS";
+            // 
+            // cmbTipofigura
+            // 
+            cmbTipofigura.FormattingEnabled = true;
+            cmbTipofigura.Items.AddRange(new object[] { "Figuras Bidimensionales", "Figuras Tridimensionales" });
+            cmbTipofigura.Location = new Point(102, 52);
+            cmbTipofigura.Name = "cmbTipofigura";
+            cmbTipofigura.Size = new Size(228, 23);
+            cmbTipofigura.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(26, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 17);
+            label2.TabIndex = 2;
+            label2.Text = "Seleccione";
+            // 
+            // btnAceptar
+            // 
+            btnAceptar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAceptar.Location = new Point(255, 93);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(75, 27);
+            btnAceptar.TabIndex = 3;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
+            // 
+            // frmPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(360, 136);
+            Controls.Add(btnAceptar);
+            Controls.Add(label2);
+            Controls.Add(cmbTipofigura);
+            Controls.Add(label1);
+            Name = "frmPrincipal";
+            Text = "frmPrincipal";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private ComboBox cmbTipofigura;
+        private Label label2;
+        private Button btnAceptar;
     }
 }

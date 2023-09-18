@@ -2,7 +2,11 @@
 {
     public class Figura
     {
-        public string tipoFigura { get; set; }
+        public string TipoFigura { get; set; }
 
+        public Figura(string tipofigura) 
+        {
+            TipoFigura = tipofigura;
+        }
     }
 }

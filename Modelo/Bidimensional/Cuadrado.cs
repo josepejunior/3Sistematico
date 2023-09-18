@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Modelo.Bidimensional
 {
-    internal class Cuadrado
+    public class Cuadrado : FiguraBidimensional
     {
+        public double Lado { get; set; }
+
+        public Cuadrado(string tipofigura, string especificofigura, double lado) : base(tipofigura, especificofigura)
+        {
+            Lado = lado;
+        }
+
+        public override string Area()
+        {
+            return (Lado * Lado).ToString();
+        }
+
+        public override string Perimetro()
+        {
+            return (4 * Lado).ToString();
+        }
     }
 }

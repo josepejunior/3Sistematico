@@ -15,6 +15,29 @@ namespace CalculoFiguras
         public frmPrincipal()
         {
             InitializeComponent();
+            cmbTipofigura.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipofigura.Items.Add("Figura Bidimensional");
+            cmbTipofigura.Items.Add("Figura Tridimensional");
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (cmbTipofigura.SelectedIndex != -1)
+            {
+                switch (cmbTipofigura.SelectedIndex)
+                {
+                    case 0:
+                        frmBidimensional b = new frmBidimensional();
+                        b.ShowDialog();
+                        break;
+                    case 1:
+                        frmTridimensional t = new frmTridimensional();
+                        t.ShowDialog();
+                        break;
+                }
+            }
+            else
+                MessageBox.Show("Tiene que seleccionar una opción antes de continuar");
         }
     }
 }
