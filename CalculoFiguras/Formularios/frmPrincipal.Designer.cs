@@ -47,7 +47,6 @@
             // cmbTipofigura
             // 
             cmbTipofigura.FormattingEnabled = true;
-            cmbTipofigura.Items.AddRange(new object[] { "Figuras Bidimensionales", "Figuras Tridimensionales" });
             cmbTipofigura.Location = new Point(102, 52);
             cmbTipofigura.Name = "cmbTipofigura";
             cmbTipofigura.Size = new Size(228, 23);
@@ -85,6 +84,7 @@
             Controls.Add(label1);
             Name = "frmPrincipal";
             Text = "frmPrincipal";
+            Load += frmPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();
         }
