@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Modelo;
+using Modelo.Tridimensional;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace CalculoFiguras
 {
     public partial class frmTridimensional : Form
     {
+        string tipofig;
         public frmTridimensional()
         {
             InitializeComponent();
@@ -28,7 +31,61 @@ namespace CalculoFiguras
             cmbTipoTridimensional.Items.Add("Tetraedro");
         }
 
-        private void btnSeleccionTrid_Click(object sender, EventArgs e)
+        private void btnCalcularTridi_Click(object sender, EventArgs e)
+        {
+            if (Valida() == "")
+            {
+                if (cmbTipoTridimensional.Text == "Esfera")
+                {
+                    Esfera esfera = new(tipofig,
+                    cmbTipoTridimensional.Text,
+                    double.Parse(txtRadioEsfera.Text));
+                    MessageBox.Show($"La figura geométrica esfera tiene como área: {esfera.Area()} unidades cuadradas" +
+                        $" y su volúmen es de: {esfera.Volumen()} unidades cúbicas.");
+                }
+                else if (cmbTipoTridimensional.Text == "Cubo")
+                {
+                    Cubo cubo = new(tipofig,
+                    cmbTipoTridimensional.Text,
+                    double.Parse(txtLadoCubo.Text));
+                    MessageBox.Show($"La figura geométrica cubo tiene como área: {cubo.Area()} unidades cuadradas" +
+                        $" y su volúmen es de: {cubo.Volumen()} unidades cúbicas.");
+                }
+                else if (cmbTipoTridimensional.Text == "Tetraedro")
+                {
+                    Tetraedro tetraedro = new(tipofig,
+                    cmbTipoTridimensional.Text,
+                    double.Parse(txtAristaTetraedro.Text));
+                    MessageBox.Show($"La figura geométrica tetraedro tiene como área: {tetraedro.Area()} unidades cuadradas" +
+                        $" y su volúmen es de: {tetraedro.Volumen()} unidades cúbicas.");
+                }
+            }
+            else
+                MessageBox.Show($"Por favor ingrese {Valida()}");
+        }
+
+        private string Valida()
+        {
+            if (pnlEsfera.Visible == true && txtRadioEsfera.Text.Trim().Length == 0)
+            {
+                txtRadioEsfera.Focus();
+                return "radio de la esfera.";
+            }
+            else if (pnlCubo.Visible == true && txtLadoCubo.Text.Trim().Length == 0)
+            {
+                txtLadoCubo.Focus();
+                return "lado del cubo.";
+            }
+            else if (pnlTetraedro.Visible == true && txtAristaTetraedro.Text.Trim().Length == 0)
+            {
+                txtAristaTetraedro.Focus();
+                return "arista del tetraedro.";
+            }
+
+            return "";
+        }
+
+        private void cmbTipoTridimensional_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipoTridimensional.SelectedIndex != -1)
             {
@@ -38,38 +95,44 @@ namespace CalculoFiguras
                         pnlEsfera.Visible = true;
                         pnlCubo.Visible = false;
                         pnlTetraedro.Visible = false;
+                        LimpiarPnlCubo();
+                        LimpiarPnlTetraedro();
                         break;
 
                     case 1:
                         pnlEsfera.Visible = false;
                         pnlCubo.Visible = true;
                         pnlTetraedro.Visible = false;
+                        LimpiarPnEsfera();
+                        LimpiarPnlTetraedro();
                         break;
 
                     case 2:
                         pnlEsfera.Visible = false;
                         pnlCubo.Visible = false;
                         pnlTetraedro.Visible = true;
+                        LimpiarPnEsfera();
+                        LimpiarPnlCubo();
                         break;
                 }
             }
             else
-                MessageBox.Show("Tiene que seleccionar una opción antes de continuar");
+                MessageBox.Show("Tiene que seleccionar una opción antes de continuar.");
         }
 
-        private void btnCalcularCubo_Click(object sender, EventArgs e)
+        private void LimpiarPnEsfera()
         {
-
+            txtRadioEsfera.Clear();
         }
 
-        private void btnCalcularEsf_Click(object sender, EventArgs e)
+        private void LimpiarPnlTetraedro()
         {
-
+            txtAristaTetraedro.Clear();
         }
 
-        private void btncalcularTetra_Click(object sender, EventArgs e)
+        private void LimpiarPnlCubo()
         {
-
+            txtLadoCubo.Clear();
         }
     }
 }

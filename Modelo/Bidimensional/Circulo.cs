@@ -17,12 +17,12 @@ namespace Modelo.Bidimensional
 
         public override string Area()
         {
-            return (Math.PI * Radio * Radio).ToString();
+            return (Math.PI * Radio * Radio).ToString("N2");
         }
 
         public override string Perimetro()
         {
-            return (2 * Math.PI * Radio).ToString();
+            return (2 * Math.PI * Radio).ToString("N2");
         }
     }
 }

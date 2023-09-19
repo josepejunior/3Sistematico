@@ -42,9 +42,7 @@
             label4 = new Label();
             label3 = new Label();
             btnCalcularCir = new Button();
-            btnSeleccion = new Button();
             pnlCuadrado = new Panel();
-            pnlCirculo = new Panel();
             pnlTriangulo = new Panel();
             pictureBox3 = new PictureBox();
             txtAristaTriangulo = new TextBox();
@@ -56,19 +54,20 @@
             btncalcularTrian = new Button();
             label11 = new Label();
             label7 = new Label();
+            pnlCirculo = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlCuadrado.SuspendLayout();
-            pnlCirculo.SuspendLayout();
             pnlTriangulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            pnlCirculo.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(25, 9);
+            label1.Location = new Point(17, 9);
             label1.Name = "label1";
             label1.Size = new Size(291, 42);
             label1.TabIndex = 0;
@@ -78,7 +77,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(29, 66);
+            label2.Location = new Point(26, 65);
             label2.Name = "label2";
             label2.Size = new Size(70, 17);
             label2.TabIndex = 1;
@@ -87,15 +86,16 @@
             // cmbTipoBidimensional
             // 
             cmbTipoBidimensional.FormattingEnabled = true;
-            cmbTipoBidimensional.Location = new Point(103, 65);
+            cmbTipoBidimensional.Location = new Point(100, 64);
             cmbTipoBidimensional.Name = "cmbTipoBidimensional";
-            cmbTipoBidimensional.Size = new Size(108, 23);
+            cmbTipoBidimensional.Size = new Size(117, 23);
             cmbTipoBidimensional.TabIndex = 2;
+            cmbTipoBidimensional.SelectedIndexChanged += cmbTipoBidimensional_SelectedIndexChanged;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(79, 26);
+            pictureBox2.Location = new Point(80, 26);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(121, 69);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -104,7 +104,7 @@
             // 
             // txtLadoCuadrado
             // 
-            txtLadoCuadrado.Location = new Point(109, 120);
+            txtLadoCuadrado.Location = new Point(109, 128);
             txtLadoCuadrado.Name = "txtLadoCuadrado";
             txtLadoCuadrado.Size = new Size(70, 23);
             txtLadoCuadrado.TabIndex = 3;
@@ -113,7 +113,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(8, 109);
+            label5.Location = new Point(6, 117);
             label5.Name = "label5";
             label5.Size = new Size(97, 34);
             label5.TabIndex = 2;
@@ -132,13 +132,13 @@
             // btnCalcularCuadra
             // 
             btnCalcularCuadra.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCalcularCuadra.Location = new Point(206, 153);
+            btnCalcularCuadra.Location = new Point(207, 152);
             btnCalcularCuadra.Name = "btnCalcularCuadra";
             btnCalcularCuadra.Size = new Size(75, 29);
             btnCalcularCuadra.TabIndex = 0;
             btnCalcularCuadra.Text = "Calcular";
             btnCalcularCuadra.UseVisualStyleBackColor = true;
-            btnCalcularCuadra.Click += btnCalcularCuadra_Click;
+            btnCalcularCuadra.Click += btnCalcularBidi_Click;
             // 
             // pictureBox1
             // 
@@ -186,18 +186,7 @@
             btnCalcularCir.TabIndex = 0;
             btnCalcularCir.Text = "Calcular";
             btnCalcularCir.UseVisualStyleBackColor = true;
-            btnCalcularCir.Click += btnCalcularCir_Click;
-            // 
-            // btnSeleccion
-            // 
-            btnSeleccion.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSeleccion.Location = new Point(225, 66);
-            btnSeleccion.Name = "btnSeleccion";
-            btnSeleccion.Size = new Size(84, 23);
-            btnSeleccion.TabIndex = 4;
-            btnSeleccion.Text = "Seleccionar";
-            btnSeleccion.UseVisualStyleBackColor = true;
-            btnSeleccion.Click += btnSeleccion_Click;
+            btnCalcularCir.Click += btnCalcularBidi_Click;
             // 
             // pnlCuadrado
             // 
@@ -206,22 +195,10 @@
             pnlCuadrado.Controls.Add(txtLadoCuadrado);
             pnlCuadrado.Controls.Add(btnCalcularCuadra);
             pnlCuadrado.Controls.Add(label5);
-            pnlCuadrado.Location = new Point(24, 104);
+            pnlCuadrado.Location = new Point(17, 93);
             pnlCuadrado.Name = "pnlCuadrado";
             pnlCuadrado.Size = new Size(285, 185);
             pnlCuadrado.TabIndex = 7;
-            // 
-            // pnlCirculo
-            // 
-            pnlCirculo.Controls.Add(pictureBox1);
-            pnlCirculo.Controls.Add(label3);
-            pnlCirculo.Controls.Add(txtRadioCirculo);
-            pnlCirculo.Controls.Add(btnCalcularCir);
-            pnlCirculo.Controls.Add(label4);
-            pnlCirculo.Location = new Point(24, 104);
-            pnlCirculo.Name = "pnlCirculo";
-            pnlCirculo.Size = new Size(285, 185);
-            pnlCirculo.TabIndex = 8;
             // 
             // pnlTriangulo
             // 
@@ -235,7 +212,7 @@
             pnlTriangulo.Controls.Add(btncalcularTrian);
             pnlTriangulo.Controls.Add(label11);
             pnlTriangulo.Controls.Add(label7);
-            pnlTriangulo.Location = new Point(24, 104);
+            pnlTriangulo.Location = new Point(17, 93);
             pnlTriangulo.Name = "pnlTriangulo";
             pnlTriangulo.Size = new Size(285, 185);
             pnlTriangulo.TabIndex = 9;
@@ -243,7 +220,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(79, 23);
+            pictureBox3.Location = new Point(80, 23);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(121, 69);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -252,7 +229,7 @@
             // 
             // txtAristaTriangulo
             // 
-            txtAristaTriangulo.Location = new Point(45, 157);
+            txtAristaTriangulo.Location = new Point(46, 157);
             txtAristaTriangulo.Name = "txtAristaTriangulo";
             txtAristaTriangulo.Size = new Size(70, 23);
             txtAristaTriangulo.TabIndex = 9;
@@ -261,7 +238,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(8, 165);
+            label10.Location = new Point(9, 165);
             label10.Name = "label10";
             label10.Size = new Size(37, 15);
             label10.TabIndex = 6;
@@ -281,7 +258,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(6, 136);
+            label9.Location = new Point(7, 136);
             label9.Name = "label9";
             label9.Size = new Size(39, 15);
             label9.TabIndex = 5;
@@ -289,14 +266,14 @@
             // 
             // txtAlturaTriangulo
             // 
-            txtAlturaTriangulo.Location = new Point(45, 128);
+            txtAlturaTriangulo.Location = new Point(46, 128);
             txtAlturaTriangulo.Name = "txtAlturaTriangulo";
             txtAlturaTriangulo.Size = new Size(70, 23);
             txtAlturaTriangulo.TabIndex = 8;
             // 
             // txtBaseTriangulo
             // 
-            txtBaseTriangulo.Location = new Point(45, 98);
+            txtBaseTriangulo.Location = new Point(46, 98);
             txtBaseTriangulo.Name = "txtBaseTriangulo";
             txtBaseTriangulo.Size = new Size(70, 23);
             txtBaseTriangulo.TabIndex = 3;
@@ -304,19 +281,19 @@
             // btncalcularTrian
             // 
             btncalcularTrian.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btncalcularTrian.Location = new Point(206, 152);
+            btncalcularTrian.Location = new Point(207, 152);
             btncalcularTrian.Name = "btncalcularTrian";
             btncalcularTrian.Size = new Size(75, 29);
             btncalcularTrian.TabIndex = 0;
             btncalcularTrian.Text = "Calcular";
             btncalcularTrian.UseVisualStyleBackColor = true;
-            btncalcularTrian.Click += btncalcularTrian_Click;
+            btncalcularTrian.Click += btnCalcularBidi_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(6, 77);
+            label11.Location = new Point(7, 77);
             label11.Name = "label11";
             label11.Size = new Size(46, 15);
             label11.TabIndex = 7;
@@ -326,36 +303,51 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(8, 101);
+            label7.Location = new Point(9, 101);
             label7.Name = "label7";
             label7.Size = new Size(31, 15);
             label7.TabIndex = 2;
             label7.Text = "Base";
             // 
+            // pnlCirculo
+            // 
+            pnlCirculo.Controls.Add(pictureBox1);
+            pnlCirculo.Controls.Add(label3);
+            pnlCirculo.Controls.Add(txtRadioCirculo);
+            pnlCirculo.Controls.Add(btnCalcularCir);
+            pnlCirculo.Controls.Add(label4);
+            pnlCirculo.Location = new Point(17, 93);
+            pnlCirculo.Name = "pnlCirculo";
+            pnlCirculo.Size = new Size(285, 185);
+            pnlCirculo.TabIndex = 8;
+            // 
             // frmBidimensional
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(335, 313);
-            Controls.Add(btnSeleccion);
+            ClientSize = new Size(320, 295);
             Controls.Add(cmbTipoBidimensional);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pnlTriangulo);
             Controls.Add(pnlCuadrado);
             Controls.Add(pnlCirculo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmBidimensional";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBidimensional";
             Load += frmBidimensional_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlCuadrado.ResumeLayout(false);
             pnlCuadrado.PerformLayout();
-            pnlCirculo.ResumeLayout(false);
-            pnlCirculo.PerformLayout();
             pnlTriangulo.ResumeLayout(false);
             pnlTriangulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            pnlCirculo.ResumeLayout(false);
+            pnlCirculo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -365,7 +357,6 @@
         private Label label1;
         private Label label2;
         private ComboBox cmbTipoBidimensional;
-        private Button btnSeleccion;
         private PictureBox pictureBox2;
         private TextBox txtLadoCuadrado;
         private Label label5;

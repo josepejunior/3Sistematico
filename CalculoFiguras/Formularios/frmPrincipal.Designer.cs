@@ -82,8 +82,12 @@
             Controls.Add(label2);
             Controls.Add(cmbTipofigura);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmPrincipal";
-            Text = "frmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Principal";
             Load += frmPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();

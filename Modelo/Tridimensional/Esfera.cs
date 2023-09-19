@@ -17,12 +17,12 @@ namespace Modelo.Tridimensional
 
         public override string Area()
         {
-            return (4 * Math.PI * Radio * Radio).ToString();
+            return (4 * Math.PI * Radio * Radio).ToString("N2");
         }
 
         public override string Volumen()
         {
-            return (1.33 * Math.PI * Radio * Radio * Radio).ToString();
+            return (1.33 * Math.PI * Radio * Radio * Radio).ToString("N2");
         }
     }
 }

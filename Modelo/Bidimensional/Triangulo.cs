@@ -22,12 +22,12 @@ namespace Modelo.Bidimensional
 
         public override string Area()
         {
-            return (Base * Altura / 2).ToString();
+            return (Base * Altura / 2).ToString("N2");
         }
 
         public override string Perimetro()
         {
-            return (Arista * Arista * Arista).ToString();
+            return (Arista + Arista + Arista).ToString("N2");
         }
     }
 }

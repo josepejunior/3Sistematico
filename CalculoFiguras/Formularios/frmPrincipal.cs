@@ -19,19 +19,23 @@ namespace CalculoFiguras
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            string tipofig = cmbTipofigura.Text;
+
             if (cmbTipofigura.SelectedIndex != -1)
             {
                 switch (cmbTipofigura.SelectedIndex)
                 {
                     case 0:
                         frmBidimensional b = new frmBidimensional();
+                        tipofig = cmbTipofigura.Text;
                         b.ShowDialog();
-                    break;
+                        break;
 
                     case 1:
                         frmTridimensional t = new frmTridimensional();
+                        tipofig = cmbTipofigura.Text;
                         t.ShowDialog();
-                    break;
+                        break;
                 }
             }
             else

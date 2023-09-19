@@ -12,17 +12,17 @@ namespace Modelo.Tridimensional
 
         public Cubo(string tipofigura, string especificofigura, double lado) : base(tipofigura, especificofigura)
         {
-            Lado = Lado;
+            Lado = lado;
         }
 
         public override string Area()
         {
-            return (6 * Lado * Lado).ToString();
+            return (6 * (Lado * Lado)).ToString("N2");
         }
 
         public override string Volumen()
         {
-            return (Lado * Lado * Lado).ToString();
+            return (Lado * Lado * Lado).ToString("N2");
         }
     }
 }

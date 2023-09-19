@@ -17,12 +17,12 @@ namespace Modelo.Bidimensional
 
         public override string Area()
         {
-            return (Lado * Lado).ToString();
+            return (Lado * Lado).ToString("N2");
         }
 
         public override string Perimetro()
         {
-            return (4 * Lado).ToString();
+            return (4 * Lado).ToString("N2");
         }
     }
 }
