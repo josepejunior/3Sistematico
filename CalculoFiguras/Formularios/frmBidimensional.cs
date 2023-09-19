@@ -98,17 +98,17 @@ namespace CalculoFiguras
             else if (pnlTriangulo.Visible == true && txtBaseTriangulo.Text.Trim().Length == 0)
             {
                 txtBaseTriangulo.Focus();
-                return "base del triangulo.";
+                return "base del triángulo.";
             }
             else if (pnlTriangulo.Visible == true && txtAlturaTriangulo.Text.Trim().Length == 0)
             {
                 txtAlturaTriangulo.Focus();
-                return "altura del triangulo.";
+                return "altura del triángulo.";
             }
             else if (pnlTriangulo.Visible == true && txtAristaTriangulo.Text.Trim().Length == 0)
             {
                 txtAristaTriangulo.Focus();
-                return "arista del triangulo.";
+                return "arista del triángulo.";
             }
 
             return "";

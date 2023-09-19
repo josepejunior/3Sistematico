@@ -337,7 +337,7 @@
             MinimizeBox = false;
             Name = "frmBidimensional";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmBidimensional";
+            Text = "Figura Bidimensional";
             Load += frmBidimensional_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
