@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modelo\Modelo.csproj" />
+    <Compile Remove="Recursos\**" />
+    <EmbeddedResource Remove="Recursos\**" />
+    <None Remove="Recursos\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Recursos\" />
+    <ProjectReference Include="..\Modelo\Modelo.csproj" />
   </ItemGroup>
 
   <ItemGroup>
