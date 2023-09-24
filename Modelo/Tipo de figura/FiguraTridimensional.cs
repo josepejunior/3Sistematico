@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
+    // Clase abstracta por los métodos no implementados
     public abstract class FiguraTridimensional : Figura
     {
         public string EspecificoFigura { get; set; }
@@ -15,7 +16,12 @@ namespace Modelo
             EspecificoFigura = especificofigura;
         }
 
-        public abstract string Area();
-        public abstract string Volumen();
+        public abstract double Area(); // Método para obtener el área de la figura
+
+        public abstract double Volumen(); // Método para obtener el volumen de la figura
+
+        // Imprime los datos de la figura
+        public override string ToString() =>
+            $"Cálculos de la figura {EspecificoFigura} de tipo {TipoFigura}\n";
     }
 }

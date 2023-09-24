@@ -15,14 +15,15 @@ namespace Modelo.Tridimensional
             Arista = arista;
         }
 
-        public override string Area()
-        {
-            return (1.73 * Arista * Arista).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => 1.73 * Arista * Arista;
 
-        public override string Volumen()
-        {
-            return ((Arista * Arista * Arista * 1.42) * 0.5).ToString("N2");
-        }
+        // Obteniendo el volumen
+        public override double Volumen() => (Arista * Arista * Arista * 1.42) * 0.5;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() +
+            $"Área: {Area():F2}\n" +
+            $"Volumen: {Volumen():F2}";
     }
 }

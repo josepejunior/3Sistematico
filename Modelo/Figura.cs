@@ -4,7 +4,7 @@
     {
         public string TipoFigura { get; set; }
 
-        public Figura(string tipofigura) 
+        public Figura(string tipofigura)
         {
             TipoFigura = tipofigura;
         }

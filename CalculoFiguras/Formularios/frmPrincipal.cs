@@ -17,23 +17,27 @@ namespace CalculoFiguras
             InitializeComponent();
         }
 
+        public struct Dato
+        {
+            public string tipofig;
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string tipofig = cmbTipofigura.Text;
-
             if (cmbTipofigura.SelectedIndex != -1)
             {
+                Dato f;
+                f.tipofig = cmbTipofigura.Text;
+
                 switch (cmbTipofigura.SelectedIndex)
                 {
                     case 0:
-                        frmBidimensional b = new frmBidimensional();
-                        tipofig = cmbTipofigura.Text;
+                        frmBidimensional b = new frmBidimensional(f);
                         b.ShowDialog();
                         break;
 
                     case 1:
-                        frmTridimensional t = new frmTridimensional();
-                        tipofig = cmbTipofigura.Text;
+                        frmTridimensional t = new frmTridimensional(f);
                         t.ShowDialog();
                         break;
                 }

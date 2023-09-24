@@ -14,10 +14,11 @@ namespace CalculoFiguras
 {
     public partial class frmBidimensional : Form
     {
-        string tipofig;
-        public frmBidimensional()
+        public string Tipofig;
+        public frmBidimensional(frmPrincipal.Dato f)
         {
             InitializeComponent();
+            Tipofig = f.tipofig;
         }
 
         private void frmBidimensional_Load(object sender, EventArgs e)
@@ -37,29 +38,26 @@ namespace CalculoFiguras
             {
                 if (cmbTipoBidimensional.Text == "Círculo")
                 {
-                    Circulo circulo = new(tipofig,
+                    Circulo circulo = new(Tipofig,
                     cmbTipoBidimensional.Text,
                     double.Parse(txtRadioCirculo.Text));
-                    MessageBox.Show($"La figura geométrica círculo tiene como área: {circulo.Area()} unidades cuadradas" +
-                        $" y su perímetro es de: {circulo.Perimetro()} unidades.");
+                    MessageBox.Show(circulo.ToString());
                 }
                 else if (cmbTipoBidimensional.Text == "Cuadrado")
                 {
-                    Cuadrado cuadrado = new(tipofig,
+                    Cuadrado cuadrado = new(Tipofig,
                     cmbTipoBidimensional.Text,
                     double.Parse(txtLadoCuadrado.Text));
-                    MessageBox.Show($"La figura geométrica cuadrado tiene como área: {cuadrado.Area()} unidades cuadradas" +
-                        $" y su perímetro es de: {cuadrado.Perimetro()} unidades.");
+                    MessageBox.Show(cuadrado.ToString());
                 }
                 else if (cmbTipoBidimensional.Text == "Triángulo")
                 {
-                    Triangulo triangulo = new(tipofig,
+                    Triangulo triangulo = new(Tipofig,
                     cmbTipoBidimensional.Text,
                     double.Parse(txtBaseTriangulo.Text),
                     double.Parse(txtAlturaTriangulo.Text),
                     double.Parse(txtAristaTriangulo.Text));
-                    MessageBox.Show($"La figura geométrica triángulo tiene como área: {triangulo.Area()} unidades cuadradas" +
-                        $" y su perímetro es de: {triangulo.Perimetro()} unidades.");
+                    MessageBox.Show(triangulo.ToString());
                 }
             }
             else
@@ -122,6 +120,7 @@ namespace CalculoFiguras
                 {
                     case 0:
                         pnlCirculo.Visible = true;
+                        txtRadioCirculo.Focus();
                         pnlCuadrado.Visible = false;
                         pnlTriangulo.Visible = false;
                         LimpiarPnlCuadro();
@@ -131,6 +130,7 @@ namespace CalculoFiguras
                     case 1:
                         pnlCirculo.Visible = false;
                         pnlCuadrado.Visible = true;
+                        txtLadoCuadrado.Focus();
                         pnlTriangulo.Visible = false;
                         LimpiarPnlCirculo();
                         LimpiarPnlTriagulo();
@@ -140,6 +140,7 @@ namespace CalculoFiguras
                         pnlCirculo.Visible = false;
                         pnlCuadrado.Visible = false;
                         pnlTriangulo.Visible = true;
+                        txtBaseTriangulo.Focus();
                         LimpiarPnlCirculo();
                         LimpiarPnlCuadro();
                         break;

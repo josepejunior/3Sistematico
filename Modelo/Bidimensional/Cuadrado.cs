@@ -15,14 +15,15 @@ namespace Modelo.Bidimensional
             Lado = lado;
         }
 
-        public override string Area()
-        {
-            return (Lado * Lado).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => Lado * Lado;
 
-        public override string Perimetro()
-        {
-            return (4 * Lado).ToString("N2");
-        }
+        // Obteniendo el perímetro
+        public override double Perimetro() => 4 * Lado;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() +
+            $"Área: {Area():F2}\n" +
+            $"Perímetro: {Perimetro():F2}";
     }
 }

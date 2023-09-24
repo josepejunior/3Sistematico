@@ -15,14 +15,15 @@ namespace Modelo.Bidimensional
             Radio = radio;
         }
 
-        public override string Area()
-        {
-            return (Math.PI * Radio * Radio).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => Math.PI * Radio * Radio;
 
-        public override string Perimetro()
-        {
-            return (2 * Math.PI * Radio).ToString("N2");
-        }
+        // Obteniendo el perímetro
+        public override double Perimetro() => 2 * Math.PI * Radio;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() + 
+            $"Área: {Area():F2}\n" +
+            $"Perímetro: {Perimetro():F2}";
     }
 }

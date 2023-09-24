@@ -14,10 +14,11 @@ namespace CalculoFiguras
 {
     public partial class frmTridimensional : Form
     {
-        string tipofig;
-        public frmTridimensional()
+        string Tiofig;
+        public frmTridimensional(frmPrincipal.Dato f)
         {
             InitializeComponent();
+            Tiofig = f.tipofig;
         }
 
         private void frmTridimensional_Load(object sender, EventArgs e)
@@ -37,27 +38,24 @@ namespace CalculoFiguras
             {
                 if (cmbTipoTridimensional.Text == "Esfera")
                 {
-                    Esfera esfera = new(tipofig,
+                    Esfera esfera = new(Tiofig,
                     cmbTipoTridimensional.Text,
                     double.Parse(txtRadioEsfera.Text));
-                    MessageBox.Show($"La figura geométrica esfera tiene como área: {esfera.Area()} unidades cuadradas" +
-                        $" y su volúmen es de: {esfera.Volumen()} unidades cúbicas.");
+                    MessageBox.Show(esfera.ToString());
                 }
                 else if (cmbTipoTridimensional.Text == "Cubo")
                 {
-                    Cubo cubo = new(tipofig,
+                    Cubo cubo = new(Tiofig,
                     cmbTipoTridimensional.Text,
                     double.Parse(txtLadoCubo.Text));
-                    MessageBox.Show($"La figura geométrica cubo tiene como área: {cubo.Area()} unidades cuadradas" +
-                        $" y su volúmen es de: {cubo.Volumen()} unidades cúbicas.");
+                    MessageBox.Show(cubo.ToString());
                 }
                 else if (cmbTipoTridimensional.Text == "Tetraedro")
                 {
-                    Tetraedro tetraedro = new(tipofig,
+                    Tetraedro tetraedro = new(Tiofig,
                     cmbTipoTridimensional.Text,
                     double.Parse(txtAristaTetraedro.Text));
-                    MessageBox.Show($"La figura geométrica tetraedro tiene como área: {tetraedro.Area()} unidades cuadradas" +
-                        $" y su volúmen es de: {tetraedro.Volumen()} unidades cúbicas.");
+                    MessageBox.Show(tetraedro.ToString());
                 }
             }
             else
@@ -93,6 +91,7 @@ namespace CalculoFiguras
                 {
                     case 0:
                         pnlEsfera.Visible = true;
+                        txtRadioEsfera.Focus();
                         pnlCubo.Visible = false;
                         pnlTetraedro.Visible = false;
                         LimpiarPnlCubo();
@@ -102,6 +101,7 @@ namespace CalculoFiguras
                     case 1:
                         pnlEsfera.Visible = false;
                         pnlCubo.Visible = true;
+                        txtLadoCubo.Focus();
                         pnlTetraedro.Visible = false;
                         LimpiarPnEsfera();
                         LimpiarPnlTetraedro();
@@ -111,6 +111,7 @@ namespace CalculoFiguras
                         pnlEsfera.Visible = false;
                         pnlCubo.Visible = false;
                         pnlTetraedro.Visible = true;
+                        txtAristaTetraedro.Focus();
                         LimpiarPnEsfera();
                         LimpiarPnlCubo();
                         break;

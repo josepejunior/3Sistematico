@@ -15,14 +15,15 @@ namespace Modelo.Tridimensional
             Radio = radio;
         }
 
-        public override string Area()
-        {
-            return (4 * Math.PI * Radio * Radio).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => 4 * Math.PI * Radio * Radio;
 
-        public override string Volumen()
-        {
-            return (1.33 * Math.PI * Radio * Radio * Radio).ToString("N2");
-        }
+        // Obteniendo el volumen
+        public override double Volumen() => 1.33 * Math.PI * Radio * Radio * Radio;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() +
+            $"Área: {Area():F2}\n" +
+            $"Volumen: {Volumen():F2}";
     }
 }

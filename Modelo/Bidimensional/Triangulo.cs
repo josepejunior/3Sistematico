@@ -9,7 +9,7 @@ namespace Modelo.Bidimensional
 {
     public class Triangulo : FiguraBidimensional
     {
-        public double Base {  get; set; }
+        public double Base { get; set; }
         public double Altura { get; set; }
         public double Arista { get; set; }
 
@@ -20,14 +20,15 @@ namespace Modelo.Bidimensional
             Arista = arista;
         }
 
-        public override string Area()
-        {
-            return (Base * Altura / 2).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => Base * Altura / 2;
 
-        public override string Perimetro()
-        {
-            return (Arista + Arista + Arista).ToString("N2");
-        }
+        // Obteniendo el perímetro
+        public override double Perimetro() => Arista + Arista + Arista;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() +
+            $"Área: {Area():F2}\n" +
+            $"Perímetro: {Perimetro():F2}";
     }
 }

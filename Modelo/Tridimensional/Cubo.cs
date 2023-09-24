@@ -15,14 +15,15 @@ namespace Modelo.Tridimensional
             Lado = lado;
         }
 
-        public override string Area()
-        {
-            return (6 * (Lado * Lado)).ToString("N2");
-        }
+        // Obteniendo el área
+        public override double Area() => 6 * (Lado * Lado);
 
-        public override string Volumen()
-        {
-            return (Lado * Lado * Lado).ToString("N2");
-        }
+        // Obteniendo el volumen
+        public override double Volumen() => Lado * Lado * Lado;
+
+        // Imrimiendo los datos
+        public override string ToString() => base.ToString() +
+            $"Área: {Area():F2}\n" +
+            $"Volumen: {Volumen():F2}";
     }
 }
